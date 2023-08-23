@@ -7,7 +7,6 @@ We build on top of the public repository found
 ([here](https://github.com/google-research/federated/tree/master/optimization)). 
 
 
-
 ## Using this directory
 
 This library uses [TensorFlow Federated](https://www.tensorflow.org/federated).
@@ -24,6 +23,11 @@ pip install tensorflow
 pip install tensorflow-federated
 ```
 ### Install Bazel
+You will need to install [Bazel](https://www.bazel.build/) in order to run the code.
+Please see the guide
+[here](https://docs.bazel.build/versions/master/install.html) for installation
+instructions.
+
 ```sh
 !apt install apt-transport-https curl gnupg
 !curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
@@ -31,12 +35,6 @@ pip install tensorflow-federated
 !echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 !apt update && apt install bazel
 ```
-
-
-You will need to install [Bazel](https://www.bazel.build/) in order to run the code.
-Please see the guide
-[here](https://docs.bazel.build/versions/master/install.html) for installation
-instructions.
 
 ## Directory structure
 
