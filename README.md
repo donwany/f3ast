@@ -96,6 +96,7 @@ synthetic | synthetic     | [synthetic(1,1)](locally generated)    | Logistic Re
 <!-- mdformat on -->
 
 ## Flags for selection policies:
+
 ```sh
 --schedule=importance \
 --beta=0.001  \
@@ -104,6 +105,7 @@ synthetic | synthetic     | [synthetic(1,1)](locally generated)    | Logistic Re
 --var_q_clients=0.7
 --schedule:[none, importance, loss ]
 ```
+
 *   **none**: `--schedule=none`
 *   **importance**: `--schedule=importance` --beta=0.001
 *   **loss**: `--schedule=loss`
