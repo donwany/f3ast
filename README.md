@@ -96,10 +96,14 @@ synthetic | synthetic     | [synthetic(1,1)](locally generated)    | Logistic Re
 <!-- mdformat on -->
 
 ## Flags for selection policies:
-
---schedule=importance --beta=0.001  --experiment_name=cifar_importance_LARGE_A --sine_wave=False --var_q_clients=0.7
+```sh
+--schedule=importance \
+--beta=0.001  \
+--experiment_name=cifar_importance_LARGE_A \
+--sine_wave=False \
+--var_q_clients=0.7
 --schedule:[none, importance, loss ]
-
+```
 *   **none**: `--schedule=none`
 *   **importance**: `--schedule=importance` --beta=0.001
 *   **loss**: `--schedule=loss`
