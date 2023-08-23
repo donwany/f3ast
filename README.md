@@ -23,6 +23,15 @@ pip install pandas
 pip install tensorflow
 pip install tensorflow-federated
 ```
+### Install Bazel
+```sh
+!apt install apt-transport-https curl gnupg
+!curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
+!mv bazel.gpg /etc/apt/trusted.gpg.d/
+!echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+!apt update && apt install bazel
+```
+
 
 You will need to install [Bazel](https://www.bazel.build/) in order to run the code.
 Please see the guide
@@ -51,11 +60,20 @@ aspects of the federated training procedure can be customized via `absl` flags.
 For example, from this directory one could run:
 
 ```
-bazel run main:federated_trainer -- --task=cifar100 --total_rounds=100
---client_optimizer=sgd --client_learning_rate=0.1 --client_batch_size=20
---server_optimizer=sgd --server_learning_rate=1.0 --clients_per_round=10
---client_epochs_per_round=1 --experiment_name=emnist_fedavg_experiment 
---schedule=none --sine_wave=False --var_q_clients=0.
+bazel run main:federated_trainer -- \
+--task=cifar100 \
+--total_rounds=100 \
+--client_optimizer=sgd \
+--client_learning_rate=0.1 \
+--client_batch_size=20 \
+--server_optimizer=sgd \
+--server_learning_rate=1.0 \
+--clients_per_round=10 \
+--client_epochs_per_round=1 \
+--experiment_name=emnist_fedavg_experiment \
+--schedule=none \
+--sine_wave=False \
+--var_q_clients=0.
 ```
 
 This will run 100 communication rounds of federated training, using SGD on both
